@@ -3,6 +3,7 @@ package com.want.joel.i_want;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -49,7 +50,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "joel@ujcv.com:hello", "luis@ujcv.com:world"
+            "joel@want.com:hello", "luis@want.com:world"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -93,6 +94,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
+
 
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
@@ -346,5 +348,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
         }
     }
+
+    public void onClick(View V) {
+        Intent intent = new Intent(this, ScrollingActivity.class);
+
+        startActivity(intent);
+    }
 }
+
 
